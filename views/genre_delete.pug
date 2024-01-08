@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+  h1= title + ': ' + genre.name 
+  if books.length > 0
+    p The genre must be removed from these books before attempting to delete this genre.
+    ul
+      each book in books
+        li 
+          a(href=book.url)= book.title
+  else 
+    p Are you sure you want to delete this genre?
+    form(method="POST")
+      input(type="submit" value="delete")

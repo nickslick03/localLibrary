@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Are you sure you want to delete this book instance?
+  dl
+    dt Book name
+    dd= bookinstance.book.title
+    dt Imprint
+    dd= bookinstance.imprint
+  form(method="POST")
+    input(type="submit", value="delete")
